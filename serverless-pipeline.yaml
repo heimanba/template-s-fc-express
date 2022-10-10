@@ -1,0 +1,12 @@
+name: "Deploy Express application to FC"
+triggers:
+  github:
+    secret: test
+    events:
+      - eventName: "push"
+        filter: 'body.ref in ["refs/heads/master"]'
+steps:
+  - run: npm i @serverless-devs/s -g
+  - run: s -v
+  - run: s config add 
+  - run: s deploy --skip-actions
