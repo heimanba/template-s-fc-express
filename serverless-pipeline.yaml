@@ -7,7 +7,7 @@ triggers:
         filter: 'body.ref in ["refs/heads/master"]'
 steps:
   - run: npm i
-  - working-directory: ./code
+    working-directory: ./code
   - run: npm i @serverless-devs/s -g
   - run: s -v
   - run: echo ${{secrets.SIMPLE_ALIYUN_ACCOUNTID}}
